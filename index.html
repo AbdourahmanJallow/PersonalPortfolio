@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/fe552563ca.js" crossorigin="anonymous"></script>
+    <title>Personal Portfolio Website</title>
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="container">
+        <nav id="navbar">
+          <img src="images/logo-1.png" class="logo">
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+          <div>
+            <p>UI/UX Designer</p>
+            <h1>Hi, I'm <span>Abdourahman</span><br> Jallow From The Gambia</h1>
+          </div>
+          <div class="icon">
+            <img src="images/boy.png">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/about-me.JPG" alt="">
+          </div>
+          <div class="about-col-2">
+            <h2 class="sub-title">About Me</h2>
+            <p>Hello, I'm Abdourahman Sheikh Jallow, based in The Gambia. I am a UI/UX designer and an aspiring full stack developer. I love creating things that live on the internet.</p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                <li><span>Web Development</span><br>Web app Development</li>
+                <li><span>Computer Programming</span><br>Java, Python, JavaScript</li>
+              </ul>
+            </div>
+            
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>2021 - Current</span><br>Computer Science Student at The University of The Gambia.</li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <h2 class="sub-title">My Services</h2>
+        <div class="services-list">
+          <div>
+            <i class="fas fa-code"></i>
+            <h3>Front-End Development</h3>
+          </div>
+          <div>
+            <i class="fas fa-crop-alt"></i>
+            <h3>UI/UX Design</h3>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+      <div class="container">
+        <h2 class="sub-title">My Work</h2>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/work-1.png">
+            <div class="layer">
+              <h3>Loan Calculator Web App</h3>
+              <p>Calculates loan to be repaid.</p>
+              <a href="https://abdourahmanjallow.github.io/LoanCalculator-JS/"><i
+                  class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work2.jpg">
+            <div class="layer">
+              <h3>Calculator App</h3>
+              <p>This web app performs basic math operations.</p>
+              <a href="https://abdourahmanjallow.github.io/SimpleCalculator-JS/"><i
+                  class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-3.png">
+            <div class="layer">
+              <h3>Online Shopping App</h3>
+              <p>Sample online shopping store.</p>
+              <a href="https://dexstore.netlify.app/" ><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+        <a href="https://github.com/AbdourahmanJallow" class="btn" target="_blank">See more</a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h2 class="sub-title">Contact Me</h2>
+            <p><i class="fas fa-paper-plane"></i> abdourahman87@outlook.com</p>
+            <p><i class="fas fa-phone-square-alt"></i> (220) 2278218</p>
+            <div class="social-icons">
+              <a href="https://twitter.com/dexman_00"><i class="fab fa-twitter"></i></a>
+              <a href="https://github.com/AbdourahmanJallow"><i class="fa-brands fa-square-github"></i></a>
+            </div>
+            <a href="images/my-cv.pdf" download class="btn btn-secondary">Download CV</a>
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required>
+              <input type="text" name="Email" placeholder="Your Email" required>
+              <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="submit" class="btn btn-secondary">Send Message</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p>Thank you for scrolling <i class="fas fa-heart"></i></p>
+      <span class="arrow"><a href="#header"><i class="fa-solid fa-arrow-up"></i></a></span>
+    </footer>
+
+    
+    <script>
+      const tablinks = document.getElementsByClassName('tab-links');
+      const tabcontents = document.getElementsByClassName('tab-contents');
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add('active-link');
+
+        document.getElementById(tabname).classList.add('active-tab');
+      }
+
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu() {
+        sidemenu.style.right = '0';
+      }
+
+      function closemenu() {
+        sidemenu.style.right = '-200px';
+      }
+    </script>
+
+    <script>
+      const scriptURL =
+        'https://script.google.com/macros/s/AKfycbxCGmkiwkxjjSI1lsu-J7IrEqbKyjrHwQbEJbsMsla2RrFgFppPzKm3AgnwR4k1xXz7/exec';
+      const form = document.forms['submit-to-google-sheet'];
+
+      const msg = document.getElementById("msg");
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, {
+            method: 'POST',
+            body: new FormData(form)
+          })
+          .then(response => {
+            msg.innerHTML = "Message Sent Succesfully!";
+            setTimeout(function(){
+              msg.innerHTML = '';
+            }, 5000)
+            form.reset();
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+  </body>
+
+</html>
